@@ -1,0 +1,16 @@
+        JFileChooser fileChooser = new JFileChooser();
+        if (fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+            File file = fileChooser.getSelectedFile();
+
+            try (FileInputStream fis = new FileInputStream(file); ObjectInputStream ois = new ObjectInputStream(fis)) {
+
+                Vector<Vector<Object>> data = (Vector<Vector<Object>>) ois.readObject();
+                Vector<String> columns = new Vector<>(Arrays.asList("Nome", "Telefone", "Email"));
+
+                model.setDataVector(data, columns);
+                JOptionPane.showMessageDialog(this, "Contatos carregados com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+
+            } catch (IOException | ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(this, "Erro ao carregar contatos: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        }

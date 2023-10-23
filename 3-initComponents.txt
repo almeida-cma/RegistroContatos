@@ -1,0 +1,11 @@
+ public MainForm() {
+        initComponents();
+
+\\Copiar abaixo após linha acima
+
+        model = new DefaultTableModel(); //Add
+        model.addColumn("Nome"); //Add
+        model.addColumn("Telefone"); //Add
+        model.addColumn("Email"); //Add
+        jTable1.setModel(model); //Add
+    }

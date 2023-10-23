@@ -1,0 +1,12 @@
+public class MainForm extends javax.swing.JFrame {
+
+\\Copiar abaixo após linha acima
+
+    public static boolean isValidEmail(String email) { //add
+        String regex = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$"; //add
+        Pattern pattern = Pattern.compile(regex); //add
+        Matcher matcher = pattern.matcher(email); //add
+        return matcher.matches(); //add
+    } //add
+
+    private DefaultTableModel model; //Add

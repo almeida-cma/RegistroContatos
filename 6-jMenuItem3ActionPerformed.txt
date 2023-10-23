@@ -1,0 +1,6 @@
+        JOptionPane.showMessageDialog(
+                this,
+                "Registro de Contatos v1.0\nDesenvolvido por [Seu Nome]",
+                "Sobre",
+                JOptionPane.INFORMATION_MESSAGE
+        );

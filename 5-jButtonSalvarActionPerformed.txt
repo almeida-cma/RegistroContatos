@@ -1,0 +1,15 @@
+        String nome = jTextFieldNome.getText();
+        String telefone = jTextFieldTelefone.getText();
+        String email = jTextFieldEmail.getText();
+
+        if (!isValidEmail(email)) { //add
+            JOptionPane.showMessageDialog(this, "Por favor, insira um e-mail válido.", "Erro", JOptionPane.ERROR_MESSAGE); //add
+            jTextFieldEmail.requestFocus(); //add
+            return; // não continue se o e-mail não for válido //add
+        } //add
+
+        model.addRow(new Object[]{nome, telefone, email});
+
+        jTextFieldNome.setText("");
+        jTextFieldTelefone.setText("");
+        jTextFieldEmail.setText("");
