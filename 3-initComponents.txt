@@ -8,4 +8,3 @@
         model.addColumn("Telefone"); //Add
         model.addColumn("Email"); //Add
         jTable1.setModel(model); //Add
-    }
